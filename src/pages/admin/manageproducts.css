@@ -1,0 +1,111 @@
+.manage-products {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.manage-products h2 {
+  color: #800000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.manage-products-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.manage-products-actions a {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.manage-products-actions a:hover {
+  background: #111;
+}
+
+.manage-products ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.manage-products li {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.manage-products li:hover {
+  transform: translateY(-5px);
+  border-color: #00c853;
+}
+
+.manage-products img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.manage-products h4 {
+  color: #800000;
+  margin: 10px 0;
+}
+
+.manage-products p {
+  color: #333;
+  margin: 5px 0;
+}
+
+.manage-products button {
+  background: #5eaa7e;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.manage-products button:hover {
+  background: #009624;
+}
+
+.manage-products button.delete {
+  background: #800000;
+}
+
+.manage-products button.delete:hover {
+  background: #5e0000;
+}
+
+.capacity-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.capacity-selector button {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.capacity-selector button:hover {
+  background: #ddd;
+}

@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useAdminAuth } from "../../context/AdminAuthContext";
 import { auth } from "../../services/firebase";
 import { signOut } from "firebase/auth";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
@@ -12,6 +13,7 @@ import "./navigation.css";
 
 function Navigation() {
   const { currentUser, userData } = useContext(AuthContext);
+  const { isAdmin, logout } = useAdminAuth(); // ✅ Use the correct hook names
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -23,6 +25,12 @@ function Navigation() {
       console.error(error);
       alert("Error logging out.");
     }
+  };
+
+  const handleAdminLogout = () => {
+    logout();
+    alert("Admin logged out!");
+    navigate("/admin/login");
   };
 
   return (
@@ -38,7 +46,13 @@ function Navigation() {
             <Nav.Link as={RouterLink} to="/services">Services</Nav.Link>
             <Nav.Link as={RouterLink} to="/pricing">Pricing</Nav.Link>
             <Nav.Link as={RouterLink} to="/about-us">About Us</Nav.Link>
-            {currentUser ? (
+
+            {isAdmin ? (
+              <>
+                <span className="nav-link">Hi, Admin</span>
+                <span className="nav-link" style={{ cursor: 'pointer' }} onClick={handleAdminLogout}>Logout</span>
+              </>
+            ) : currentUser ? (
               <>
                 <span className="nav-link">Hi, {userData?.firstName || currentUser.email}</span>
                 <span className="nav-link" style={{ cursor: 'pointer' }} onClick={handleLogout}>Logout</span>

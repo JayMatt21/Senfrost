@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { products, getPrice } from '../../data/products';
+import { Link } from 'react-router-dom';
+import './ManageProducts.css';
 
 const ManageProducts = () => {
   const [selectedCapacities, setSelectedCapacities] = useState({});
@@ -32,6 +34,12 @@ const ManageProducts = () => {
   return (
     <div className="manage-products">
       <h2>🛍️ Manage Products</h2>
+
+      <div className="manage-products-actions">
+        <Link to="/admin">← Back to Dashboard</Link>
+        <Link to="/admin/add-product">+ Add New Product</Link>
+      </div>
+
       <ul>
         {products.map((product) => (
           <li key={product.id}>
@@ -45,7 +53,7 @@ const ManageProducts = () => {
             </div>
             <p>₱{selectedPrices[product.id]?.toLocaleString()}</p>
             <button>Edit</button>
-            <button>Delete</button>
+            <button className="delete">Delete</button>
           </li>
         ))}
       </ul>
