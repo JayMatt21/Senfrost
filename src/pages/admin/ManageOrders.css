@@ -1,0 +1,61 @@
+/* src/pages/admin/ManageOrders.css */
+
+.manage-orders {
+  padding: 2rem;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.orders-table th,
+.orders-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.orders-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.orders-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.orders-table tr:hover {
+  background: #f1f1f1;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.action-button:hover {
+  background: #0056b3;
+}
+
+.manage-orders a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.manage-orders a:hover {
+  color: #0056b3;
+}

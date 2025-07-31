@@ -1,0 +1,52 @@
+.order-confirmed-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.with-sidebar .order-confirmed-container {
+  margin-left: 180px; /* adjust for sidebar on large screens */
+}
+
+@media (max-width: 768px) {
+  .with-sidebar .order-confirmed-container {
+    margin-left: 100px; /* adjust for mobile sidebar */
+  }
+}
+
+.order-confirmed-container h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #5a1a1a; /* match brand maroon if you want */
+}
+
+.order-confirmed-container p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.back-home-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #2d6cdf;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.back-home-button:hover {
+  background: #1b4da0;
+}
+
+.note {
+  font-size: 0.85rem;
+  margin-top: 20px;
+  color: #555;
+}

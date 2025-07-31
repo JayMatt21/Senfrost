@@ -1,0 +1,101 @@
+/* -------------- Global body -------------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* -------------- Fixed Sidebar (Navbar) -------------- */
+.custom-navbar {
+  background-color: #800000; /* Dark red */
+  color: #fff;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  width: 160px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  overflow-y: auto; /* scrollable if needed */
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #fff !important;
+  margin: 1rem;
+}
+
+.navbar-brand:hover {
+  color: #ddd !important;
+}
+
+.custom-offcanvas {
+  position: static;
+  transform: none !important;
+  visibility: visible !important;
+  max-width: 160px;
+  width: 100%;
+  border-right: 1px solid #444;
+  background-color: #111; /* dark sidebar bg */
+  color: #fff;
+}
+
+.offcanvas-header {
+  display: none; /* hide close btn on fixed */
+}
+
+.offcanvas-body {
+  padding: 1rem;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #ccc !important;
+}
+
+/* -------------- Page Content shifts to right -------------- */
+.with-sidebar {
+  margin-left: 160px;
+  padding: 1rem;
+}
+
+/* -------------- MOBILE: Responsive tweaks -------------- */
+@media (max-width: 768px) {
+  .custom-navbar {
+    width: 100px; /* narrower sidebar on small screen */
+  }
+
+  .custom-offcanvas {
+    max-width: 100px;
+  }
+
+  .with-sidebar {
+    margin-left: 100px; /* match sidebar width */
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}

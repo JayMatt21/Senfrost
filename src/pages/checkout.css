@@ -1,0 +1,162 @@
+/* Container for the whole checkout page */
+.checkout-container {
+  max-width: 600px;
+  margin: 40px auto; /* add top/bottom space */
+  padding: 1rem;
+}
+
+.with-sidebar .checkout-container {
+  margin-left: 180px; /* align with sidebar width desktop */
+}
+
+@media (max-width: 768px) {
+  .with-sidebar .checkout-container {
+    margin-left: 100px; /* align with sidebar width mobile */
+  }
+}
+
+/* Remove default list styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Cart items list */
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+/* Each cart item with image + details */
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+  flex-wrap: wrap; /* responsive: stack on small screens */
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.cart-item-details p {
+  margin: 0;
+  color: #555;
+}
+
+.quantity-controls {
+  margin-top: 0.5rem;
+}
+
+.quantity-controls button {
+  margin: 0 0.3rem;
+  padding: 4px 8px;
+}
+
+.remove-item {
+  margin-left: 0.5rem;
+  color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Payment options block */
+.payment-options {
+  margin-top: 1rem;
+}
+
+/* Uploaded QR image */
+.qr-upload img {
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Card details fields */
+.card-details label {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.card-details input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 0.2rem;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cvv-input-wrapper {
+  position: relative;
+}
+
+.cvv-input-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-cvv {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Confirm Payment button */
+.pay-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%; /* full width for mobile friendliness */
+}
+
+.pay-button:hover {
+  background: #218838;
+}
+
+/* Back button - looks like link */
+.back-button {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.back-button:hover {
+  color: #0056b3;
+}

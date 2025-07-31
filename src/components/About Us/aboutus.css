@@ -1,0 +1,98 @@
+/* ===============================
+   About Us Section
+================================ */
+
+.about-us-section {
+  background-color: #f7fafc;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Push content pag may sidebar */
+.with-sidebar .about-us-section {
+  margin-left: 160px; /* match sidebar width desktop */
+}
+
+@media (max-width: 768px) {
+  .with-sidebar .about-us-section {
+    margin-left: 100px; /* match sidebar width mobile */
+  }
+}
+
+.about-us-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a1a1a;
+  text-align: center;
+}
+
+.about-us-description {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.125rem;
+  color: #4a5568;
+}
+
+/* ===============================
+   Service Cards Section
+================================ */
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: #fff;
+  text-align: center;
+  max-width: 20rem;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #00c853;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #5a1a1a;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #5a1a1a;
+}
+
+.service-description {
+  margin-top: 0.5rem;
+  color: #718096;
+}
+
+.footer-space {
+  padding-top: 4rem;
+}
+
+/* ===============================
+   Responsive Stacking
+================================ */
+
+@media (max-width: 600px) {
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

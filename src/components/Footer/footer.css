@@ -1,0 +1,49 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #5a1a1a; /* mas darker maroon for contrast */
+  color: white;
+  text-align: center;
+  padding: 20px 10px; /* more breathing space */
+  border-top: 2px solid darkgrey;
+  z-index: 1000;
+}
+
+/* Push footer pag may sidebar */
+.with-sidebar .footer {
+  margin-left: 160px; /* same as sidebar width desktop */
+}
+
+@media (max-width: 768px) {
+  .with-sidebar .footer {
+    margin-left: 100px; /* same as sidebar width mobile */
+  }
+}
+
+.footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #ccc; /* subtle hover color */
+}
+
+.footer p,
+.footer div {
+  margin: 5px 0; /* minimal vertical margin for spacing */
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Optional: make links stack on mobile if too crowded */
+@media (max-width: 500px) {
+  .footer a {
+    display: block;
+    margin: 5px 0;
+  }
+}
