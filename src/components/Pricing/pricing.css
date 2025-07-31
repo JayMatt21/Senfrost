@@ -12,12 +12,12 @@
 
 /* Sidebar offset para hindi matakpan */
 .with-sidebar .pricing-page {
-  margin-left: 160px; /* Match mo sa sidebar width sa desktop */
+  margin-left: 160px;
 }
 
 @media (max-width: 768px) {
   .with-sidebar .pricing-page {
-    margin-left: 100px; /* Match mo sa sidebar width sa mobile */
+    margin-left: 100px; 
   }
 }
 
