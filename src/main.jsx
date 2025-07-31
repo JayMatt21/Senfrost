@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <CartProvider>
         <AdminAuthProvider>
-          <OrderProvider> {/* IDAGDAG ITO DITO */}
+          <OrderProvider>
             <App />
           </OrderProvider>
         </AdminAuthProvider>

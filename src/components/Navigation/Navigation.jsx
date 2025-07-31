@@ -1,5 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -25,24 +26,29 @@ function Navigation() {
   };
 
   return (
-    <Navbar className="custom-navbar">
-      <div className="sidebar-content">
-        <Navbar.Brand as={RouterLink} to="/">Senfrost</Navbar.Brand>
-        <Nav className="flex-column">
-          <Nav.Link as={RouterLink} to="/#home">Home</Nav.Link>
-          <Nav.Link as={RouterLink} to="/#services">Services</Nav.Link>
-          <Nav.Link as={RouterLink} to="/#pricing">Pricing</Nav.Link>
-          <Nav.Link as={RouterLink} to="/#about-us">About Us</Nav.Link>
-          {currentUser ? (
-            <>
-              <span className="nav-link">Hi, {userData?.firstName || currentUser.email}</span>
-              <span className="nav-link" style={{ cursor: 'pointer' }} onClick={handleLogout}>Logout</span>
-            </>
-          ) : (
-            <Nav.Link as={RouterLink} to="/auth">Login / Signup</Nav.Link>
-          )}
-        </Nav>
-      </div>
+    <Navbar expand="lg" className="custom-navbar" sticky="top">
+      <Container fluid>
+        <Navbar.Brand as={RouterLink} to="/" className="brand-logo me-auto">
+          Senfrost
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
+            <Nav.Link as={RouterLink} to="/">Home</Nav.Link>
+            <Nav.Link as={RouterLink} to="/services">Services</Nav.Link>
+            <Nav.Link as={RouterLink} to="/pricing">Pricing</Nav.Link>
+            <Nav.Link as={RouterLink} to="/about-us">About Us</Nav.Link>
+            {currentUser ? (
+              <>
+                <span className="nav-link">Hi, {userData?.firstName || currentUser.email}</span>
+                <span className="nav-link" style={{ cursor: 'pointer' }} onClick={handleLogout}>Logout</span>
+              </>
+            ) : (
+              <Nav.Link as={RouterLink} to="/auth">Login / Signup</Nav.Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }

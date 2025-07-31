@@ -1,6 +1,5 @@
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-
 import Home from './components/Home/Home';
 import Services from './components/Services/Services';
 import Footer from './components/Footer/Footer';
@@ -43,20 +42,11 @@ function App() {
     <Router>
       <Navigation />
       <div className="with-sidebar">
-        <ScrollToHash />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-                <Services />
-                <Pricing />
-                <AboutUs />
-                <Footer />
-              </>
-            }
-          />
+          <Route path="/" element={<Home/>} />
+          <Route path="/services" element={<Services/>} />
+          <Route path="/pricing" element={<Pricing/>} />
+          <Route path="/about-us" element={<AboutUs/>} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order-confirmed" element={<OrderConfirmed />} />
@@ -72,7 +62,7 @@ function App() {
             </AdminRoute>
           } />
           <Route path="/admin/login" element={<AdminLogin />} />
-</Routes>
+        </Routes>
       </div>
     </Router>
   );
