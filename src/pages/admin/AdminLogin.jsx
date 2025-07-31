@@ -1,51 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAdminAuth } from '../../context/AdminAuthContext';
 import { useNavigate } from 'react-router-dom';
+import './adminlogin.css';
 
-const AdminLogin = () => {
-  const { isAdmin, login } = useAdminAuth();
-  const navigate = useNavigate();
-
+export default function AdminLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    checkStoredAuth();
-    if (isAdmin) {
-      navigate('/admin');
-    }
-  }, [isAdmin, navigate]);
+  const { login } = useAdminAuth();
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const success = login(username, password);
-    if (success) {
+    if (login(username, password)) {
       navigate('/admin');
     } else {
-      alert('Invalid credentials.');
+      setError('Invalid admin credentials.');
     }
   };
 
   return (
-    <div className="admin-login">
+    <div className="admin-login-container">
       <h2>Admin Login</h2>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-        /><br/>
+        />
+
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        /><br/>
+        />
+
         <button type="submit">Login</button>
+
+        <p className="forgot-password">Forgot Password?</p>
+
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );
-};
-
-export default AdminLogin;
+}

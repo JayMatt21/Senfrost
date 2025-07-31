@@ -1,19 +1,36 @@
-/* adminlogin.css */
+/* ✅ Add a gradient background to the whole page */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ccefff, #e6f7ff);
+  font-family: Arial, sans-serif;
+}
 
+/* ✅ Admin login container styling */
 .admin-login-container {
   max-width: 400px;
-  margin: 80px auto;
-  padding: 40px 30px;
-  background: #fff;
+  margin: 80px auto; /* Centered vertically with more space */
+  padding: 30px 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.with-sidebar .admin-login-container {
+  margin-left: 180px;
+}
+
+@media (max-width: 768px) {
+  .with-sidebar .admin-login-container {
+    margin-left: 100px;
+  }
 }
 
 .admin-login-container h2 {
   margin-bottom: 20px;
-  color: #333;
+  font-weight: bold;
 }
 
 .admin-login-container form {
@@ -22,24 +39,43 @@
 }
 
 .admin-login-container input {
+  width: 100%;
   padding: 12px 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.admin-login-container input:focus {
+  outline: none;
+  border-color: #800000;
+  box-shadow: 0 0 5px rgba(128, 0, 0, 0.3);
 }
 
 .admin-login-container button {
   padding: 12px;
-  background-color: #333;
+  background-color: #800000;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .admin-login-container button:hover {
-  background-color: #555;
+  background-color: #a00000;
+}
+
+.admin-login-container .forgot-password {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 .admin-login-container p.error {
