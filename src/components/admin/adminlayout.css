@@ -1,0 +1,154 @@
+/* Admin Layout Base */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 220px;
+  background: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+
+.admin-sidebar .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-sidebar h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #800000;
+}
+
+.admin-sidebar .collapse-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.admin-sidebar .sidebar-nav {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-sidebar .sidebar-nav a,
+.admin-sidebar .logout-btn {
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.admin-sidebar .sidebar-nav a:hover,
+.admin-sidebar .logout-btn:hover {
+  color: #5eaa7e;
+}
+
+.admin-sidebar .label {
+  margin-left: 10px;
+}
+
+.admin-layout.collapsed .admin-sidebar {
+  width: 70px;
+}
+
+.admin-layout.collapsed .label {
+  display: none;
+}
+
+/* Content */
+.admin-content {
+  flex: 1;
+  padding: 40px;
+  background: #f9f9f9;
+}
+
+/* Cards & Tables match pricing theme */
+.stat-card {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-approve {
+  background: #5eaa7e;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: #c62828;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-approve:hover {
+  background: #009624;
+}
+
+.btn-cancel:hover {
+  background: #b71c1c;
+}
+/* Pricing Style Card Shared */
+.pricing-style {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.chart-card {
+  width: 100%;
+}
+
+.table-card {
+  overflow-x: auto;
+}
+
+.stat-card h5 {
+  color: #800000;
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  margin: 10px 0 0;
+  color: #333;
+}
